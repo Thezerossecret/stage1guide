@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحله اول</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f1f8e8;
+            color: #173B2A;
+            font-family: Tahoma, Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            border: 2px solid #173B2A;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #173B2A;
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #173B2A;
+            opacity: 0.6;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 13px 35px;
+            border: none;
+            border-radius: 10px;
+            background-color: #173B2A;
+            color: #f1f8e8;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>رمز مرحله را وارد کنید</h1>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="رمز عبور"
+        >
+
+        <button onclick="checkPassword()">ورود</button>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+        function checkPassword() {
+
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if (password === "zerodays") {
+
+                message.textContent = "رمز صحیح است ✓";
+                message.style.color = "#173B2A";
+
+                // بعداً لینک مرحله بعد را اینجا قرار می‌دهیم
+                // window.location.href = "stage2.html";
+
+            } else {
+
+                message.textContent = "رمز اشتباه است!";
+                message.style.color = "#173B2A";
+            }
+        }
+    </script>
+
+</body>
+</html>
